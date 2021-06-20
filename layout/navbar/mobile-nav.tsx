@@ -23,8 +23,14 @@ const MobileNav = () => {
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
-      <NextLink href="?login_penduduk=true">
-        <Button display="block" width="100%" bg="primary.600" color="white">
+      <NextLink href="">
+        <Button display="block" width="100%">
+          Daftar
+        </Button>
+      </NextLink>
+
+      <NextLink href="">
+        <Button display="block" width="100%" bg="primary.500" color="white">
           Login
         </Button>
       </NextLink>
@@ -32,7 +38,12 @@ const MobileNav = () => {
   );
 };
 
-const MobileNavItem = ({ label, children, href }) => {
+interface MobileNavProps {
+  label: string;
+  href: string;
+}
+
+const MobileNavItem = ({ label, children, href }: MobileNavProps) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (

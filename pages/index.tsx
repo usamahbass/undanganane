@@ -1,11 +1,11 @@
-import Layout from "~/layout";
+import { PublicLayout } from "~/layout";
 import { Features, Hero } from "~/views/home";
 
 export default function Home() {
   return (
-    <Layout>
+    <PublicLayout>
       <Hero />
       <Features />
-    </Layout>
+    </PublicLayout>
   );
 }
