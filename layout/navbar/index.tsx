@@ -1,17 +1,17 @@
-import { ReactChildren } from "react";
-import { Container } from "@chakra-ui/react";
+import { ReactNode } from "react";
+import { ThemeToggle } from "~/components";
 import Navbar from "./navbar";
 
 interface LayoutProps {
-  children: ReactChildren;
+  children?: ReactNode;
 }
 
 export const PublicLayout = ({ children }: LayoutProps) => {
   return (
     <>
       <Navbar />
-      <Container maxW="6xl">{children}</Container>
+      {children}
+      <ThemeToggle />
     </>
   );
 };
-

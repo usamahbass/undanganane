@@ -1,5 +1,5 @@
 import { Text, Box, Heading, useColorModeValue } from "@chakra-ui/react";
-import { FrameImage } from "~/components";
+import { DescWedding, FrameImage } from "~/components";
 import { WeddingLayout } from "~/layout";
 
 export const DesignTwo = () => {
@@ -9,16 +9,18 @@ export const DesignTwo = () => {
         frame="/classic/frame-picture-2.png"
         image="https://avatars.githubusercontent.com/u/56109283?v=4"
       >
-        <Text mb="3" fontFamily="Sofia">
-          Assalamualaikum Warahmatullahi Wabarakatuh
-        </Text>
-        <Text fontFamily="Nunito" fontSize="sm">
-          Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i
-          serta kerabat sekalian untuk menghadiri pernikahan kami
-        </Text>
+        <Box textAlign="center">
+          <Text mb="3" fontFamily="Sofia">
+            Assalamualaikum Warahmatullahi Wabarakatuh
+          </Text>
+          <Text fontFamily="Nunito" fontSize="sm">
+            Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i
+            serta kerabat sekalian untuk menghadiri pernikahan kami
+          </Text>
+        </Box>
       </FrameImage>
 
-      <Box as="section" mt="5">
+      <Box textAlign="center" as="section" mt="5" overflow="auto">
         <Box mb="5">
           <Heading
             fontFamily="Sofia"
@@ -49,24 +51,13 @@ export const DesignTwo = () => {
           </Text>
         </Box>
 
-        <Box mb="5">
-          <Text fontFamily="Sofia" fontSize="lg">
-            Resepsi
-          </Text>
-
-          <Text fontFamily="Nunito" fontSize="lg" mb="3">
-            Tanggal: 20 Juni 2021
-          </Text>
-
-          <Text fontFamily="Nunito" fontSize="lg" mb="3">
-            Jam: 17.00 - 20.00
-          </Text>
-
-          <Text fontFamily="Nunito" size="sm">
-            Bertempat di
-          </Text>
-          <Text fontFamily="Nunito">Cirebon</Text>
-        </Box>
+        <DescWedding
+          date="20 Juni 2021"
+          resepsi="19.00 - 20.00"
+          akad="20.00 - 22.00"
+          qr_code="qr kode"
+          lokasi="Jalan Syekh Lemahabang no 36, Kabupaten Cirebon Jawa Barat"
+        />
       </Box>
     </WeddingLayout>
   );

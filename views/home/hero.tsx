@@ -21,71 +21,70 @@ export const Hero = () => {
         />
       </Head>
 
-      <Container maxW="3xl" mb="1">
-        <Stack
-          as={Box}
-          textAlign={"center"}
-          spacing={{ base: 8, md: 14 }}
-          py={{ base: 20, md: 36 }}
-        >
-          <Heading
-            fontWeight={600}
-            fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-            lineHeight="110%"
-          >
-            Buat undangan online <br />
-            <Text as="span" color="primary.500">
-              dengan satu klik
-            </Text>
-          </Heading>
-          <Text color="gray.500">
-            Undanganane adalah platform undangan online gratis yang dapat
-            membuat undangan online seperti pernikahan dll.
-          </Text>
+      <Box bg={useColorModeValue("primary.500", "gray.800")} height="100vh">
+        <Container maxW="3xl" mb="1">
           <Stack
-            direction="column"
-            spacing={3}
-            align="center"
-            alignSelf="center"
-            position="relative"
+            as={Box}
+            textAlign={"center"}
+            spacing={{ base: 8, md: 14 }}
+            py={{ base: 20, md: 36 }}
           >
-            <Button
-              colorScheme="primary.500"
-              bg="primary.500"
-              rounded="full"
-              px={6}
-              _hover={{
-                bg: "primary.300",
-              }}
+            <Heading
+              fontWeight={600}
+              fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+              lineHeight="110%"
+              color="white"
             >
-              Mulai sekarang
-            </Button>
-            <Button variant="link" colorScheme="blue" size="sm">
-              Pelajari
-            </Button>
-            <Box>
-              <Icon
-                as={Arrow}
-                color={useColorModeValue("gray.800", "gray.300")}
-                w={71}
-                position="absolute"
-                right={-71}
-                top={"10px"}
-              />
-              <Text
-                fontSize="lg"
-                fontFamily="Caveat"
-                position="absolute"
-                right="-125px"
-                top="-15px"
-                transform="rotate(10deg)"
-              >
-                Gratis
+              Buat undangan online <br />
+              <Text as="span" color="white">
+                dengan satu klik
               </Text>
-            </Box>
+            </Heading>
+            <Text color="white">
+              Undanganane adalah platform undangan online gratis yang dapat
+              membuat undangan online seperti pernikahan dll.
+            </Text>
+            <Stack
+              direction="column"
+              spacing={3}
+              align="center"
+              alignSelf="center"
+              position="relative"
+            >
+              <Button
+                rounded="full"
+                px={6}
+                bg={useColorModeValue("white", "gray.600")}
+              >
+                Buat undangan sekarang
+              </Button>
+              <Button variant="link" color="white" size="sm">
+                Pelajari
+              </Button>
+              <Box>
+                <Icon
+                  as={Arrow}
+                  color={useColorModeValue("gray.800", "gray.300")}
+                  w={71}
+                  position="absolute"
+                  right={-71}
+                  top={"10px"}
+                />
+                <Text
+                  fontSize="lg"
+                  fontFamily="Caveat"
+                  position="absolute"
+                  right="-125px"
+                  top="-15px"
+                  transform="rotate(10deg)"
+                >
+                  Gratis
+                </Text>
+              </Box>
+            </Stack>
           </Stack>
-        </Stack>
-      </Container>
+        </Container>
+      </Box>
     </>
   );
 };

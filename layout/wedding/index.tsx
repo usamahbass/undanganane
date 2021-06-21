@@ -7,17 +7,12 @@ import { ThemeToggle } from "~/components";
 interface WeddingProps {
   children?: ReactNode;
   fontFamily?: string;
-  space?: boolean;
 }
 
-export const WeddingLayout = ({
-  children,
-  fontFamily,
-  space,
-}: WeddingProps) => {
+export const WeddingLayout = ({ children, fontFamily }: WeddingProps) => {
   const [isMobile] = useMediaQuery("(max-width: 670px)");
   return (
-    <Flex justifyContent="center" height="100vh">
+    <Flex justifyContent="center">
       <Head>
         <link
           href={`https://fonts.googleapis.com/css2?family=${fontFamily}&display=swap`}
@@ -30,26 +25,22 @@ export const WeddingLayout = ({
       </Head>
       {isMobile ? (
         <Box
-          p="0"
-          textAlign="center"
-          shadow={isMobile ? "none" : "xl"}
           height="100%"
+          textAlign="center"
+          p="2rem .5rem 1rem .5rem"
+          shadow={isMobile ? "none" : "xl"}
         >
           {children}
         </Box>
       ) : (
         <Container
           position="absolute"
-          height="100%"
           overflow="hidden"
           shadow="xl"
+          height="100vh"
         >
           <PerfectScrollBar>
-            <Box
-              textAlign="center"
-              height="100%"
-              p={space ? "4rem 2.5rem 4rem 2.5rem" : "0 2.5rem 4rem 2.5rem"}
-            >
+            <Box textAlign="center" p="0 2.5rem 4rem 2.5rem">
               {children}
             </Box>
           </PerfectScrollBar>

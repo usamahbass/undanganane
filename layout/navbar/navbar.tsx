@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   Box,
   Flex,
@@ -18,19 +19,29 @@ import MobileNav from "./mobile-nav";
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
   const [isMobile] = useMediaQuery("(max-width: 800px)");
+  const [isScroll, setIsScroll] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      document.addEventListener("scroll", () => {
+        const status = window.scrollY > 400 ? true : false;
+        setIsScroll(status);
+      });
+    }
+  }, []);
+
+  console.log(isScroll, "HERE");
 
   return (
     <Box as="header" position="fixed" top="0" zIndex="999" width="100%">
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
-        minH={"60px"}
+        align="center"
+        minH="60px"
+        transition="background-color 200ms linear"
         py={{ base: 2 }}
         px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
-        align={"center"}
+        bg={useColorModeValue(isScroll ? "white" : "primary.500", "gray.800")}
+        color={useColorModeValue(isScroll ? "black" : "white", "white")}
       >
         <Flex
           flex={{ base: 1, md: "auto" }}
@@ -54,7 +65,7 @@ export default function Navbar() {
               href="/"
               size="lg"
               textAlign={useBreakpointValue({ base: "center", md: "left" })}
-              color={useColorModeValue("gray.800", "white")}
+              color={useColorModeValue(isScroll ? "black" : "white", "white")}
               as={NextLink}
             >
               Undangan Ane
@@ -67,12 +78,33 @@ export default function Navbar() {
             {!isMobile && (
               <>
                 <NextLink href="">
-                  <Button width="100px" mr="3">
+                  <Button
+                    width="100px"
+                    mr="3"
+                    color="primary.500"
+                    _hover={{
+                      bg: "transparent",
+                      border: "1px solid white",
+                      color: "white",
+                    }}
+                  >
                     Daftar
                   </Button>
                 </NextLink>
                 <NextLink href="">
-                  <Button width="100px" bg="primary.500" color="white">
+                  <Button
+                    width="100px"
+                    bg="primary.500"
+                    variant="outline"
+                    color="white"
+                    _hover={{
+                      bg: "#EDF2F7",
+                      color: "primary.500",
+                    }}
+                    _active={{
+                      bg: "transparent",
+                    }}
+                  >
                     Masuk
                   </Button>
                 </NextLink>

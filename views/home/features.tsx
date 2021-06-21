@@ -1,9 +1,20 @@
 import { ReactElement } from "react";
-import { Box, SimpleGrid, Icon, Text, Stack, Flex } from "@chakra-ui/react";
+import {
+  Box,
+  SimpleGrid,
+  Icon,
+  Text,
+  Stack,
+  Flex,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import {
   DollarSign as FreeIcon,
   Tool as CustomIcon,
   Cloud as OnlineIcon,
+  Moon as DarkModeIcon,
+  WifiOff as OfflineIcon,
+  Smartphone as ResponsiveIcon,
 } from "react-feather";
 import { Headline } from "~/components";
 
@@ -18,26 +29,50 @@ const Featured = [
   {
     title: "Gratis",
     subtitle:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...",
+      "Yap, gaperlu ngeluarin kocek dah. Tinggal pilih template selesai.",
     icon: FreeIcon,
-    bg: "#EAF9FF",
-    color: "#3DABDD",
+    bg: "info.100",
+    color: "info.500",
   },
   {
-    title: "Kostum",
+    title: "Mudah",
     subtitle:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...",
+      "Pilih template desain yang ada, sesuaikan dengan undanganmu, simpan dan undanganmu sudah dapat dibagikan.",
     icon: CustomIcon,
-    bg: "#FAEBE1",
-    color: "#EC8C4B",
+    bg: "danger.100",
+    color: "danger.500",
   },
   {
     title: "Online",
     subtitle:
-      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...",
+      "Yap, pastilah masa enggak. Undanganmu pasti bisa diakses secara online.",
     icon: OnlineIcon,
-    bg: "#E4FFEE",
-    color: "#40975F",
+    bg: "success.100",
+    color: "success.500",
+  },
+  {
+    title: "Dark Mode Support",
+    subtitle:
+      "Pengunjung yang melihat undanganmu juga bisa mendapatkan fitur dark mode, ya mode gelap. Biar ga sakit mata hehe.",
+    icon: DarkModeIcon,
+    bg: "warning.100",
+    color: "warning.500",
+  },
+  {
+    title: "Offline Support",
+    subtitle:
+      "Yap, undanganmu bisa diakses secara offline dan bisa di install lalu ditambahkan ke home hpmu layaknya aplikasi.",
+    icon: OfflineIcon,
+    bg: "success.100",
+    color: "success.500",
+  },
+  {
+    title: "Responsive",
+    subtitle:
+      "Tenang, undanganmu sudah pasti responsive kok. Bisa ditampilkan di berbagai macam device.",
+    icon: ResponsiveIcon,
+    bg: "primary.100",
+    color: "primary.500",
   },
 ];
 
@@ -57,17 +92,17 @@ const Feature = ({ title, text, icon, bg }: FeatureProps) => {
         {icon}
       </Flex>
       <Text fontWeight={600}>{title}</Text>
-      <Text color={"gray.600"}>{text}</Text>
+      <Text color={useColorModeValue("gray.600", "#ccc")}>{text}</Text>
     </Stack>
   );
 };
 
 export const Features = () => {
   return (
-    <Box p={4}>
+    <Box p={4} mt="5">
       <Headline
         title="Fitur"
-        subTitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore..."
+        subTitle="Ini nih fitur yang tersedia di undanganane"
       />
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
         {Featured.map((el) => (
