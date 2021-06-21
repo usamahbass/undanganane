@@ -9,9 +9,11 @@ import {
   Icon,
   useColorModeValue,
   createIcon,
+  useMediaQuery,
 } from "@chakra-ui/react";
 
 export const Hero = () => {
+  const [isMobile] = useMediaQuery("(max-width: 670px)");
   return (
     <>
       <Head>
@@ -36,8 +38,8 @@ export const Hero = () => {
               color="white"
             >
               Buat undangan online <br />
-              <Text as="span" color="white">
-                dengan satu klik
+              <Text as="span" color={useColorModeValue("white", "primary.500")}>
+                dengan mudah
               </Text>
             </Heading>
             <Text color="white">
@@ -67,15 +69,15 @@ export const Hero = () => {
                   color={useColorModeValue("gray.800", "gray.300")}
                   w={71}
                   position="absolute"
-                  right={-71}
-                  top={"10px"}
+                  right={isMobile ? "0px" : "-71px"}
+                  top={isMobile ? "80px" : "10px"}
                 />
                 <Text
                   fontSize="lg"
                   fontFamily="Caveat"
                   position="absolute"
-                  right="-125px"
-                  top="-15px"
+                  right={isMobile ? "0" : "-90px"}
+                  top={isMobile ? "50px" : "-15px"}
                   transform="rotate(10deg)"
                 >
                   Gratis

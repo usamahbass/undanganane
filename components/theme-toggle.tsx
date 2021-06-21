@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   IconButton,
   Tooltip,
@@ -10,6 +11,20 @@ export const ThemeToggle = () => {
   const SwitchIcon = useColorModeValue(MoonIcon, SunIcon);
   const text = useColorModeValue("dark", "light");
   const { toggleColorMode: toggleMode } = useColorMode();
+
+  const [isScroll, setIsScroll] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      document.addEventListener("scroll", () => {
+        const status = window.scrollY > 100 ? true : false;
+        setIsScroll(status);
+      });
+    }
+  }, []);
+
+  console.log(text, "HRE");
+
   return (
     <Tooltip hasArrow label="Ganti tema" placement="bottom">
       <IconButton
@@ -22,7 +37,11 @@ export const ThemeToggle = () => {
         title={`Ganti ke ${text} mode`}
         variant="ghost"
         onClick={toggleMode}
-        icon={<SwitchIcon />}
+        icon={
+          <SwitchIcon
+            color={text === "light" ? "white" : isScroll ? "black" : "white"}
+          />
+        }
       />
     </Tooltip>
   );

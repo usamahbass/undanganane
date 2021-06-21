@@ -30,8 +30,6 @@ export default function Navbar() {
     }
   }, []);
 
-  console.log(isScroll, "HERE");
-
   return (
     <Box as="header" position="fixed" top="0" zIndex="999" width="100%">
       <Flex
