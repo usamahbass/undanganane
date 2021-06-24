@@ -99,7 +99,7 @@ const Feature = ({ title, text, icon, bg }: FeatureProps) => {
 
 export const Features = () => {
   return (
-    <Box p="5" mt="10" height="100vh">
+    <Box p="5" mt="10">
       <Headline
         title="Fitur"
         subTitle="Ini nih fitur yang tersedia di undanganane"

@@ -7,7 +7,11 @@ import {
 } from "@chakra-ui/react";
 import { Sun as SunIcon, Moon as MoonIcon } from "react-feather";
 
-export const ThemeToggle = () => {
+interface ThemeToggleProps {
+  notRootPage?: boolean;
+}
+
+export const ThemeToggle = ({ notRootPage }: ThemeToggleProps) => {
   const SwitchIcon = useColorModeValue(MoonIcon, SunIcon);
   const text = useColorModeValue("dark", "light");
   const { toggleColorMode: toggleMode } = useColorMode();
@@ -18,12 +22,11 @@ export const ThemeToggle = () => {
     if (typeof window !== "undefined") {
       document.addEventListener("scroll", () => {
         const status = window.scrollY > 100 ? true : false;
+
         setIsScroll(status);
       });
     }
   }, []);
-
-  console.log(text, "HRE");
 
   return (
     <Tooltip hasArrow label="Ganti tema" placement="bottom">
@@ -38,9 +41,13 @@ export const ThemeToggle = () => {
         variant="ghost"
         onClick={toggleMode}
         icon={
-          <SwitchIcon
-            color={text === "light" ? "white" : isScroll ? "black" : "white"}
-          />
+          notRootPage ? (
+            <SwitchIcon />
+          ) : (
+            <SwitchIcon
+              color={text === "light" ? "white" : isScroll ? "black" : "white"}
+            />
+          )
         }
       />
     </Tooltip>

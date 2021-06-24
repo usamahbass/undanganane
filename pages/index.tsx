@@ -1,6 +1,6 @@
 import { Container } from "@chakra-ui/layout";
 import { PublicLayout } from "~/layout";
-import { DesignView, Features, Hero } from "~/views/home";
+import { InvitationType, Features, Hero } from "~/views/home";
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
       <Hero />
       <Container maxW="6xl">
         <Features />
-        <DesignView />
+        <InvitationType />
       </Container>
     </PublicLayout>
   );

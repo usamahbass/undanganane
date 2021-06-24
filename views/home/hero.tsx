@@ -23,7 +23,7 @@ export const Hero = () => {
         />
       </Head>
 
-      <Box bg={useColorModeValue("primary.500", "gray.800")} height="100vh">
+      <Box bg={useColorModeValue("primary.500", "gray.800")}>
         <Container maxW="3xl" mb="1">
           <Stack
             as={Box}
