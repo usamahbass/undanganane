@@ -25,7 +25,7 @@ export const FrameImage = ({ frame, image, children }: FrameImageProps) => {
         display="block"
         margin="0 auto"
         position="absolute"
-        bottom={isMobile ? "700px" : "470px"}
+        bottom={isMobile ? "700px" : "490px"}
         left={isMobile ? "105px" : "210px"}
         objectFit="cover"
         alt="imageuser"
