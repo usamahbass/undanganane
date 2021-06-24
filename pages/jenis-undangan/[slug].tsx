@@ -1,11 +1,12 @@
-import { useEffect } from "react";
 import { Box, Container, SimpleGrid } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import { NextSeo } from "next-seo";
 import { v4 as uuidv4 } from "uuid";
 import { PublicLayout } from "~/layout";
 import { TYPE_OF_INVITATION } from "~/constants";
 import { CardDesign, Headline } from "~/components";
 import { SlugTypeViews } from "~/views/jenis-undangan";
+import { TypeInvitationSlugSEO } from "~/next-seo.config";
 
 export default function SlugInvitationType() {
   const {
@@ -26,7 +27,7 @@ export default function SlugInvitationType() {
     console.log(findTypeQuery, "HERE");
     return (
       <SlugTypeViews
-        title={slug}
+        title={findIsSame?.title}
         subTitle={type}
         desains={findTypeQuery.desain}
       />
@@ -35,6 +36,7 @@ export default function SlugInvitationType() {
 
   return (
     <PublicLayout notRootPage>
+      <NextSeo {...TypeInvitationSlugSEO(findIsSame?.title, type)} />
       <Box p="5" mt="5rem" maxW="6xl" as={Container}>
         <Headline
           title={`Jenis undangan ${findIsSame?.title}`}

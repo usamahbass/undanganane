@@ -1,10 +1,15 @@
 import { Box, Heading, Text, useColorModeValue } from "@chakra-ui/react";
+import { NextSeo } from "next-seo";
 import { DescWedding } from "~/components";
 import { WeddingLayout } from "~/layout";
+import { InvitationSEO } from "~/next-seo.config";
 
 export const DesignOne = () => {
   return (
     <WeddingLayout fontFamily="Sofia">
+      <NextSeo
+        {...InvitationSEO("Classic tanpa gambar", "classic/design-one")}
+      />
       <Box pt="4rem">
         <Box textAlign="center" as="header" mb="5">
           <Text mb="3" fontFamily="Sofia">

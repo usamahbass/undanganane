@@ -1,8 +1,10 @@
 import { Box, Container, SimpleGrid } from "@chakra-ui/react";
+import { NextSeo } from "next-seo";
 import { v4 as uuidv4 } from "uuid";
 import { CardDesign, Headline } from "~/components";
 import { DESAIN_TYPE } from "~/constants";
 import { PublicLayout } from "~/layout";
+import { TypeInvitationSlugSEO } from "~/next-seo.config";
 
 interface SlugType {
   title?: string | string[] | undefined;
@@ -13,6 +15,7 @@ interface SlugType {
 export const SlugTypeViews = ({ title, subTitle, desains }: SlugType) => {
   return (
     <PublicLayout notRootPage>
+      <NextSeo {...TypeInvitationSlugSEO(title, subTitle, true, subTitle)} />
       <Box p="5" mt="5rem" maxW="6xl" as={Container}>
         <Headline
           title={`Jenis undangan ${title} tipe ${subTitle}`}

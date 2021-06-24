@@ -1,10 +1,15 @@
 import { Text, Box, Heading, useColorModeValue } from "@chakra-ui/react";
+import { NextSeo } from "next-seo";
+import { InvitationSEO } from "~/next-seo.config";
 import { DescWedding, FrameImage } from "~/components";
 import { WeddingLayout } from "~/layout";
 
 export const DesignTwo = () => {
   return (
     <WeddingLayout fontFamily="Sofia">
+      <NextSeo
+        {...InvitationSEO("Classic dengan gambar", "classic/design-two")}
+      />
       <FrameImage
         frame="/classic/frame-picture-2.png"
         image="https://avatars.githubusercontent.com/u/56109283?v=4"

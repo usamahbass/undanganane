@@ -8,11 +8,13 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
+import { NextSeo } from "next-seo";
 import { Search } from "react-feather";
 import { v4 as uuiv4 } from "uuid";
 import { CardDesign, Headline } from "~/components";
 import { TYPE_OF_INVITATION } from "~/constants";
 import { PublicLayout } from "~/layout";
+import { TypeInvitationSEO } from "~/next-seo.config";
 
 export default function DesignPages() {
   const [search, setSearch] = useState<String>("");
@@ -25,6 +27,7 @@ export default function DesignPages() {
 
   return (
     <PublicLayout notRootPage>
+      <NextSeo {...TypeInvitationSEO} />
       <Box p="5" mt="5rem" maxW="6xl" as={Container}>
         <Headline
           title="Jenis Undangan"
