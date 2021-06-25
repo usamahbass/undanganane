@@ -15,7 +15,7 @@ const DesktopNav = () => {
   return (
     <Stack alignItems="center" direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
+        <Box key={uuidv4()}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Link

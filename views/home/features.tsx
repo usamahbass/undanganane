@@ -16,6 +16,7 @@ import {
   WifiOff as OfflineIcon,
   Smartphone as ResponsiveIcon,
 } from "react-feather";
+import { v4 as uuidv4 } from 'uuid';
 import { Headline } from "~/components";
 
 interface FeatureProps {
@@ -107,6 +108,7 @@ export const Features = () => {
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
         {Featured.map((el) => (
           <Feature
+            key={uuidv4()}
             icon={<Icon color={el.color} as={el.icon} w={10} h={10} />}
             title={el.title}
             bg={el.bg}
