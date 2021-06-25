@@ -1,0 +1,16 @@
+{
+  "name": "Undangan Ane",
+  "short_name": "UndanganAne",
+  "icons": [
+    {
+      "src": "./logo.png",
+      "type": "image/png",
+      "sizes": "312x312"
+    }
+  ],
+  "background_color": "#FFFFFF",
+  "description": "UndanganAne adalah platform undangan online gratis yang dapat membuat undangan online seperti pernikahan dll..",
+  "display": "standalone",
+  "start_url": "/",
+  "theme_color": "#09994E"
+}
