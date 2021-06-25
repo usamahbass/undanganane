@@ -11,6 +11,7 @@ import {
   Container,
   Button,
   useMediaQuery,
+  Image,
 } from "@chakra-ui/react";
 import { Menu as HamburgerIcon, X as CloseIcon } from "react-feather";
 import NextLink from "next/link";
@@ -35,6 +36,7 @@ export default function Navbar() {
       <Flex
         align="center"
         minH="60px"
+        shadow={isScroll ? "sm" : "none"}
         transition="background-color 200ms linear"
         py={{ base: 2 }}
         px={{ base: 4 }}
@@ -66,7 +68,7 @@ export default function Navbar() {
               color={useColorModeValue(isScroll ? "black" : "white", "white")}
               as={NextLink}
             >
-              Undangan Ane
+              <Image src="/logo.png" alt="UndanganAneLogo" width="50px" />
             </Heading>
 
             <Flex display={{ base: "none", md: "flex" }} m={"auto"}>
