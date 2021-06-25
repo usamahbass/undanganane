@@ -9,9 +9,10 @@ import {
   useDisclosure,
   Button,
 } from "@chakra-ui/react";
+import { v4 as uuidv4 } from "uuid";
 import { ChevronsDown as ChevronDownIcon } from "react-feather";
 import NextLink from "next/link";
-import { NAV_ITEMS } from "./nav-items";
+import { NavItem, NAV_ITEMS } from "./nav-items";
 
 const MobileNav = () => {
   return (
@@ -21,7 +22,7 @@ const MobileNav = () => {
       display={{ md: "none" }}
     >
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+        <MobileNavItem key={uuidv4()} {...navItem} />
       ))}
       <NextLink href="">
         <Button display="block" width="100%">
@@ -38,12 +39,7 @@ const MobileNav = () => {
   );
 };
 
-interface MobileNavProps {
-  label: string;
-  href: string;
-}
-
-const MobileNavItem = ({ label, children, href }: MobileNavProps) => {
+const MobileNavItem = ({ label, children, href }: NavItem) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
