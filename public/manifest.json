@@ -3,9 +3,14 @@
   "short_name": "UndanganAne",
   "icons": [
     {
-      "src": "./logo.png",
+      "src": "/icons/manifest-icon-192.png",
       "type": "image/png",
-      "sizes": "312x312"
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icons/manifest-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "background_color": "#FFFFFF",

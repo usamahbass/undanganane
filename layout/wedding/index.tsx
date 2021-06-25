@@ -46,7 +46,7 @@ export const WeddingLayout = ({ children, fontFamily }: WeddingProps) => {
           </PerfectScrollBar>
         </Container>
       )}
-      <ThemeToggle />
+      <ThemeToggle notRootPage />
     </Flex>
   );
 };
