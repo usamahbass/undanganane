@@ -9,8 +9,9 @@ import {
 } from "@chakra-ui/react";
 import { ChevronRight as ChevronRightIcon } from "react-feather";
 import PropTypes from "prop-types";
+import { NavItem } from "./nav-items";
 
-const DesktopSubNav = ({ label, href, subLabel }) => {
+const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   return (
     <Link
       href={href}

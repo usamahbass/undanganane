@@ -35,10 +35,9 @@ export default function DesignPages() {
         />
 
         <InputGroup>
-          <InputLeftElement
-            pointerEvents="none"
-            children={<Search color="primary.300" />}
-          />
+          <InputLeftElement pointerEvents="none">
+            <Search color="primary.300" />
+          </InputLeftElement>
           <Input
             type="text"
             placeholder="Cari jenis undangan"
@@ -57,9 +56,7 @@ export default function DesignPages() {
           ))}
         </SimpleGrid>
 
-        {isEmpty && (
-          <Text textAlign="center">"{search}" tidak ditemukan !</Text>
-        )}
+        {isEmpty && <Text textAlign="center">{search} tidak ditemukan !</Text>}
       </Box>
     </PublicLayout>
   );

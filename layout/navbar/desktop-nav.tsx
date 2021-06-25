@@ -7,6 +7,7 @@ import {
   PopoverContent,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { v4 as uuidv4 } from "uuid";
 import { NAV_ITEMS } from "./nav-items";
 import DesktopSubNav from "./desktop-sub-nav";
 
@@ -43,7 +44,7 @@ const DesktopNav = () => {
               >
                 <Stack>
                   {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
+                    <DesktopSubNav key={uuidv4()} {...child} />
                   ))}
                 </Stack>
               </PopoverContent>
